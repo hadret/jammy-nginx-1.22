@@ -1,6 +1,13 @@
-nginx (1.18.0-0+focal3) focal; urgency=medium
+nginx (1.19.2-0+focal1) focal; urgency=medium
 
   * Non-maintainer upload.
+  * New upstream Mainline release (1.19.2) - full changelog available from
+    http://nginx.org/en/CHANGES
+
+ -- Filip Chabik <hadret@gmail.com>  Thu, 27 Aug 2020 11:51:04 +0000
+
+nginx (1.18.0-0+focal3) focal; urgency=medium
+
   * Introduce support for ModSecurity v3 dynamic module.
   * Sync with Ubuntu upstream packaging.
 
