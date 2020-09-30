@@ -1,6 +1,18 @@
-nginx (1.19.2-0+focal1) focal; urgency=medium
+nginx (1.19.3-0+focal1) focal; urgency=medium
 
   * Non-maintainer upload.
+  * New upstream Mainline version (1.19.3) - full changelog available from
+    http://nginx.org/en/CHANGES
+  * Module updates:
+    - http-auth-pam: Upgrade to 1.5.2.
+    - http-echo: Upgrade to 0.62.
+    - http-lua: Upgrade to 0.10.17.
+    - http-cache-purge: Upgrade to 2.5.1.
+
+ -- Filip Chabik <hadret@gmail.com>  Wed, 30 Sep 2020 07:41:47 +0000
+
+nginx (1.19.2-0+focal1) focal; urgency=medium
+
   * New upstream Mainline release (1.19.2) - full changelog available from
     http://nginx.org/en/CHANGES
 
