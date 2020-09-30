@@ -44,7 +44,7 @@ Version: 0.9.2
 
 Module: http-cache-purge
 Homepage: https://github.com/nginx-modules/ngx_cache_purge
-Version: 2.5
+Version: 2.5.1
 
 Module: http-dav-ext
 Homepage: https://github.com/arut/nginx-dav-ext-module
