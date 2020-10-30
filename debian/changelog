@@ -1,6 +1,13 @@
-nginx (1.19.3-0+focal1) focal; urgency=medium
+nginx (1.19.4-0+focal1) focal; urgency=medium
 
   * Non-maintainer upload.
+  * New upstream Mainline version (1.19.4) - full changelog available from
+    http://nginx.org/en/CHANGES
+
+ -- Filip Chabik <hadret@hey.com>  Fri, 30 Oct 2020 13:30:51 +0000
+
+nginx (1.19.3-0+focal1) focal; urgency=medium
+
   * New upstream Mainline version (1.19.3) - full changelog available from
     http://nginx.org/en/CHANGES
   * Module updates:
