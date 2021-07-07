@@ -1,3 +1,15 @@
+nginx (1.20.1-0+focal2) focal; urgency=medium
+
+  * Non-maintainer upload.
+  * Copyright file from no longer supported modules.
+  * Module updates:
+    - http-fancyindex: Upgrade to 0.5.1
+    - rtmp: Upgrade to 1.2.2
+    - http-upsync: Upgrade to 2.1.3
+    - http-modsecurity: Upgrade to version 1.0.2
+
+ -- Filip Chabik <hadret@hey.com>  Wed, 07 Jul 2021 13:52:17 +0000
+
 nginx (1.20.1-0+focal1) focal; urgency=medium
 
   * Non-maintainer upload.
