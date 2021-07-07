@@ -72,10 +72,6 @@ Module: http-brotli
 Homepage: https://github.com/google/ngx_brotli
 Version: master
 
-Module: http-upstream-check
-Homepage: https://github.com/xiaokai-wang/nginx_upstream_check_module
-Version: 219131a
-
 Module: stream-server-traffic-status
 Homepage: https://github.com/vozlt/nginx-module-stream-sts
 Version: v0.1.1
