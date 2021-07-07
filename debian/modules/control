@@ -57,7 +57,7 @@ Version: 3.3
 
 Module: http-upsync
 Homepage: https://github.com/weibocom/nginx-upsync-module
-Version: v2.1.2
+Version: 2.1.3
 
 Module: http-vhost-traffic-status
 Homepage: https://github.com/vozlt/nginx-module-vts
