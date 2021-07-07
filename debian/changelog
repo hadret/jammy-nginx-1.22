@@ -1,6 +1,13 @@
-nginx (1.19.5-0+focal1) focal; urgency=medium
+nginx (1.19.6-0+focal1) focal; urgency=medium
 
   * Non-maintainer upload.
+  * New upstream Mainline version (1.19.6) - full changelog available from
+    http://nginx.org/en/CHANGES
+
+ -- Filip Chabik <hadret@hey.com>  Wed, 07 Jul 2021 10:11:49 +0000
+
+nginx (1.19.5-0+focal1) focal; urgency=medium
+
   * New upstream Mainline version (1.19.5) - full changelog available from
     http://nginx.org/en/CHANGES
   * fix: ubuntu-branding.patch for 1.19.5.
