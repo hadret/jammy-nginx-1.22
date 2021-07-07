@@ -39,8 +39,7 @@ Version: 3.0.0
 
 Module: http-fancyindex
 Homepage: https://github.com/aperezdc/ngx-fancyindex
-Version: 0.4.4
-Files-Excluded: .gitignore .travis.yml
+Version: 0.5.1
 
 Module: http-subs-filter
 Homepage: https://github.com/yaoweibin/ngx_http_substitutions_filter_module
