@@ -27,10 +27,6 @@ ngx_http_modsecurity_rewrite_handler(ngx_http_request_t *r)
     ngx_http_modsecurity_ctx_t   *ctx;
     ngx_http_modsecurity_conf_t  *mcf;
 
-    if (r->error_page) {
-        return NGX_DECLINED;
-    }
-
     mcf = ngx_http_get_module_loc_conf(r, ngx_http_modsecurity_module);
     if (mcf == NULL || mcf->enable != 1) {
         dd("ModSecurity not enabled... returning");
@@ -119,8 +115,9 @@ ngx_http_modsecurity_rewrite_handler(ngx_http_request_t *r)
          *
          */
         dd("Processing intervention with the connection information filled in");
-        ret = ngx_http_modsecurity_process_intervention(ctx->modsec_transaction, r);
+        ret = ngx_http_modsecurity_process_intervention(ctx->modsec_transaction, r, 1);
         if (ret > 0) {
+            ctx->intervention_triggered = 1;
             return ret;
         }
 
@@ -150,13 +147,18 @@ ngx_http_modsecurity_rewrite_handler(ngx_http_request_t *r)
         if (n_uri == (char*)-1 || n_method == (char*)-1) {
             return NGX_HTTP_INTERNAL_SERVER_ERROR;
         }
+        if (n_uri == NULL) {
+            dd("uri is of length zero");
+            return NGX_HTTP_INTERNAL_SERVER_ERROR;
+        }
         old_pool = ngx_http_modsecurity_pcre_malloc_init(r->pool);
         msc_process_uri(ctx->modsec_transaction, n_uri, n_method, http_version);
         ngx_http_modsecurity_pcre_malloc_done(old_pool);
 
         dd("Processing intervention with the transaction information filled in (uri, method and version)");
-        ret = ngx_http_modsecurity_process_intervention(ctx->modsec_transaction, r);
+        ret = ngx_http_modsecurity_process_intervention(ctx->modsec_transaction, r, 1);
         if (ret > 0) {
+            ctx->intervention_triggered = 1;
             return ret;
         }
 
@@ -203,8 +205,12 @@ ngx_http_modsecurity_rewrite_handler(ngx_http_request_t *r)
         msc_process_request_headers(ctx->modsec_transaction);
         ngx_http_modsecurity_pcre_malloc_done(old_pool);
         dd("Processing intervention with the request headers information filled in");
-        ret = ngx_http_modsecurity_process_intervention(ctx->modsec_transaction, r);
+        ret = ngx_http_modsecurity_process_intervention(ctx->modsec_transaction, r, 1);
+        if (r->error_page) {
+            return NGX_DECLINED;
+            }
         if (ret > 0) {
+            ctx->intervention_triggered = 1;
             return ret;
         }
     }
