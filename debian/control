@@ -115,7 +115,6 @@ Depends: libnginx-mod-http-auth-ldap (= ${binary:Version}),
          libnginx-mod-http-modsecurity (= ${binary:Version}),
          libnginx-mod-http-stream-server-traffic-status (= ${binary:Version}),
          libnginx-mod-http-subs-filter (= ${binary:Version}),
-         libnginx-mod-http-upstream-fair (= ${binary:Version}),
          libnginx-mod-http-upsync (= ${binary:Version}),
          libnginx-mod-http-xslt-filter (= ${binary:Version}),
          libnginx-mod-http-vhost-traffic-status (= ${binary:Version}),
@@ -199,7 +198,6 @@ Depends: libnginx-mod-http-auth-ldap (= ${binary:Version}),
          libnginx-mod-http-stream-server-traffic-status (= ${binary:Version}),
          libnginx-mod-http-subs-filter (= ${binary:Version}),
          libnginx-mod-http-uploadprogress (= ${binary:Version}),
-         libnginx-mod-http-upstream-fair (= ${binary:Version}),
          libnginx-mod-http-upsync (= ${binary:Version}),
          libnginx-mod-http-xslt-filter (= ${binary:Version}),
          libnginx-mod-http-vhost-traffic-status (= ${binary:Version}),
@@ -344,14 +342,6 @@ Description: Bring echo and more shell style goodies to Nginx
     Nginx variables).
  3. Merge contents of various "Nginx locations" (i.e., subrequests) together in
     a single main request (using echo_location and its friends).
-
-Package: libnginx-mod-http-upstream-fair
-Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: Nginx Upstream Fair Proxy Load Balancer
- The Nginx fair proxy balancer enhances the standard round-robin load balancer
- provided with Nginx so that it tracks busy backend servers and adjusts
- balancing accordingly.
 
 Package: libnginx-mod-http-headers-more-filter
 Architecture: any

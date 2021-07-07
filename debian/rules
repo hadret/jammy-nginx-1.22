@@ -25,7 +25,6 @@ DYN_MODS := \
 	http-stream-server-traffic-status \
 	http-subs-filter \
 	http-uploadprogress \
-	http-upstream-fair \
 	http-upsync \
 	http-xslt-filter \
 	http-vhost-traffic-status \
@@ -124,7 +123,6 @@ full_configure_flags := \
 			--add-dynamic-module=$(MODULESDIR)/http-brotli \
 			--add-dynamic-module=$(MODULESDIR)/http-dav-ext \
 			--add-dynamic-module=$(MODULESDIR)/http-echo \
-			--add-dynamic-module=$(MODULESDIR)/http-upstream-fair \
 			--add-dynamic-module=$(MODULESDIR)/http-subs-filter \
 			--add-dynamic-module=$(MODULESDIR)/http-geoip2 \
 			--add-dynamic-module=$(MODULESDIR)/http-modsecurity \
@@ -167,7 +165,6 @@ extras_configure_flags := \
 			--add-dynamic-module=$(MODULESDIR)/rtmp \
 			--add-dynamic-module=$(MODULESDIR)/http-modsecurity \
 			--add-dynamic-module=$(MODULESDIR)/http-uploadprogress \
-			--add-dynamic-module=$(MODULESDIR)/http-upstream-fair \
 			--add-dynamic-module=$(MODULESDIR)/http-subs-filter \
 			--add-dynamic-module=$(MODULESDIR)/http-geoip2 \
 			--add-dynamic-module=$(MODULESDIR)/http-stream-server-traffic-status \
