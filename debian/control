@@ -12,8 +12,6 @@ Build-Depends: debhelper-compat (= 12),
                libgeoip-dev,
                libhiredis-dev,
                libldap2-dev,
-               liblua5.1-0-dev [!i386 !amd64 !kfreebsd-i386 !armel !armhf !powerpc !powerpcspe !mips !mipsel],
-               libluajit-5.1-dev [i386 amd64 kfreebsd-i386 armel armhf powerpc powerpcspe mips mipsel],
                libmodsecurity-dev,
                libmaxminddb-dev,
                libmhash-dev,
@@ -36,6 +34,7 @@ Architecture: all
 Depends: nginx-core (<< ${source:Version}.1~) | nginx-full (<< ${source:Version}.1~) | nginx-light (<< ${source:Version}.1~) | nginx-extras (<< ${source:Version}.1~),
          nginx-core (>= ${source:Version}) | nginx-full (>= ${source:Version}) | nginx-light (>= ${source:Version}) | nginx-extras (>= ${source:Version}),
          ${misc:Depends}
+Breaks: libnginx-mod-http-lua (<< 1.18.0-6ubuntu5)
 Description: small, powerful, scalable web/proxy server
  Nginx ("engine X") is a high-performance web and reverse proxy server
  created by Igor Sysoev. It can be used both as a standalone web server
@@ -189,7 +188,6 @@ Depends: libnginx-mod-http-auth-ldap (= ${binary:Version}),
          libnginx-mod-http-geoip2 (= ${binary:Version}),
          libnginx-mod-http-headers-more-filter (= ${binary:Version}),
          libnginx-mod-http-image-filter (= ${binary:Version}),
-         libnginx-mod-http-lua (= ${binary:Version}),
          libnginx-mod-http-modsecurity (= ${binary:Version}),
          libnginx-mod-http-perl (= ${binary:Version}),
          libnginx-mod-http-stream-server-traffic-status (= ${binary:Version}),
@@ -206,7 +204,7 @@ Depends: libnginx-mod-http-auth-ldap (= ${binary:Version}),
          iproute2,
          ${misc:Depends},
          ${shlibs:Depends}
-Breaks: nginx (<< 1.4.5-1)
+Breaks: nginx (<< 1.4.5-1), libnginx-mod-http-lua (<< 1.18.0-6ubuntu5)
 Provides: httpd, httpd-cgi, nginx
 Conflicts: nginx-core, nginx-light
 Suggests: nginx-doc (= ${source:Version})
@@ -334,20 +332,6 @@ Description: PAM authentication module for Nginx
  .
  The module uses PAM as a backend for simple http authentication. It
  also allows setting the pam service name to allow more fine grained control.
-
-Package: libnginx-mod-http-lua
-Architecture: any
-Depends: libnginx-mod-http-ndk (= ${binary:Version}),
-         ${misc:Depends},
-         ${shlibs:Depends},
-Recommends: nginx,
-Description: Lua module for Nginx
- Embed Lua runtime into nginx.
- .
- This module embeds Lua, via the standard Lua 5.1 interpreter or LuaJIT
- 2.0/2.1, into Nginx and by leveraging Nginx's subrequests, allows the
- integration of the powerful Lua threads (Lua coroutines) into the Nginx event
- model.
 
 Package: libnginx-mod-http-ndk
 Architecture: any

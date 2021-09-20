@@ -1,3 +1,23 @@
+nginx (1.20.1-0+focal4) focal; urgency=medium
+
+  * Non-maintainer upload.
+  * Porting Lua modules removal:
+    Remove the Lua modules from NGINX (Server Team Decision) - future support
+    for Lua module now requires resty-core from OpenResty, meaning that if 
+    we want to continue to support the Lua module, we have to start becoming
+    OpenResty - users should just use OpenResty at this point for Lua.
+    Changes made for this removal:
+     - d/control:
+       - Remove lua module from dependencies, and binary build item.
+       - Add "Breaks" line for nginx-lua for older versions of NGINX.
+         This is added to the nginx metapackage and nginx-extras.
+     - d/copyright: Remove lua module.
+     - d/modules/{,patches/,watch/}nginx-lua: Remove Lua module, watch file,
+       module patches.
+     - d/rules: Remove Lua module from the build flags for -extras.
+
+ -- Filip Chabik <hadret@hey.com>  Mon, 20 Sep 2021 09:12:46 +0200
+
 nginx (1.20.1-0+focal3) focal; urgency=medium
 
   * Non-maintainer upload.
