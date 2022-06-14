@@ -1,3 +1,17 @@
+nginx (1.22.0-0+jammy2) jammy; urgency=medium
+
+  * Non-maintainer upload.
+  * Initial build after syncing latest package changes from Debian.
+
+ -- Filip Chabik <hadret@hey.com>  Tue, 14 Jun 2022 10:26:11 +0200
+
+nginx (1.22.0-0+jammy1) jammy; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream version 1.22.0
+
+ -- Filip Chabik <hadret@hey.com>  Fri, 10 Jun 2022 09:37:59 +0200
+
 nginx (1.20.2-0+focal1) focal; urgency=medium
 
   * Non-maintainer upload.
