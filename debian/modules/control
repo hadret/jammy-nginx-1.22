@@ -9,12 +9,16 @@ Version: 0.3.1
 
 Module: http-auth-pam
 Homepage: https://github.com/sto/ngx_http_auth_pam_module
-Version: 1.5.2
+Version: 1.5.3
 
 Module: http-echo
 Homepage: https://github.com/agentzh/echo-nginx-module
-Version: v0.62
+Version: 0.62
 Files-Excluded: .gitignore .gitattributes .travis.yml
+
+Module: http-geoip2
+Homepage: https://github.com/leev/ngx_http_geoip2_module
+Version: 3.3
 
 Module: http-uploadprogress
 Homepage: https://github.com/masterzen/nginx-upload-progress-module
@@ -31,7 +35,8 @@ Version: 3.0.0
 
 Module: http-fancyindex
 Homepage: https://github.com/aperezdc/ngx-fancyindex
-Version: 0.5.1
+Version: 0.5.2
+Files-Excluded: .gitignore .travis.yml
 
 Module: http-subs-filter
 Homepage: https://github.com/yaoweibin/ngx_http_substitutions_filter_module
@@ -42,10 +47,6 @@ Module: rtmp
 Homepage: https://github.com/arut/nginx-rtmp-module
 Files-Excluded: test
 Version: 1.2.2
-
-Module: http-geoip2
-Homepage: https://github.com/leev/ngx_http_geoip2_module
-Version: 3.3
 
 Module: http-upsync
 Homepage: https://github.com/weibocom/nginx-upsync-module
